@@ -14,29 +14,18 @@ import java.util.Optional;
 @Repository
 public interface UsuarioRepo extends JpaRepository<Usuario,String> {
 
+    //Permite realizar algunas consultas para obtener diferentes datos de la tabla usuario
+
     List<Usuario> findByNombreContains(String nombre);
 
     Optional<Usuario> findByEmail(String email);
 
     Optional<Usuario> findByEmailAndPassword(String email, String clave);
 
+    Optional<Usuario> findByUsername(String username);
+
     Page<Usuario> findAll(Pageable paginador);
 
     @Query("select p from Usuario u, IN (u.productosFavoritos) p where u.email= :email")
     List<Producto> obtenerProductosFavoritos(String email);
-
-    @Query("select  u.email, u.nombre,p from Usuario u left join u.productosVenta p")
-    List<Object[]> listarUsuariosYProductos();
-
-
-
-
-
-
-    /*
-    @Query("select u from Usuario u where u.nombre =:nombre")
-    List<Usuario> obtenerUsuarioPorNombre(String nombre);
-    */
-
-
 }

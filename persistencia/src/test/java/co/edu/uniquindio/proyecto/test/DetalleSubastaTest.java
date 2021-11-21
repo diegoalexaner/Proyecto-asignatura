@@ -20,7 +20,7 @@ import java.util.List;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class DetalleSubastaTest {
-
+    
     @Autowired
     private DetalleSubastaRepo detalleSubastaRepo;
 
@@ -82,7 +82,7 @@ public class DetalleSubastaTest {
     //Metodo test para listar las Detallesubastas
     @Test
     @Sql("classpath:data.sql")
-    public void listarSubastaTest(){
+    public void listarDetalleSubastaTest(){
 
         List<DetalleSubasta> lista = detalleSubastaRepo.findAll();
 

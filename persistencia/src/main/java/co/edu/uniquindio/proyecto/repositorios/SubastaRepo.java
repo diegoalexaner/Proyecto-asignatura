@@ -1,6 +1,5 @@
 package co.edu.uniquindio.proyecto.repositorios;
 
-
 import co.edu.uniquindio.proyecto.entidades.Subasta;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,11 +10,9 @@ import java.util.List;
 @Repository
 public interface SubastaRepo extends JpaRepository<Subasta, Integer> {
 
-    /*
-    @Query("select Subasta from Subasta where Subasta.codigo = :nombre")
-    List<Subasta> obtenerSubastaPorCodigo(Integer codigo);
-    */
+  //Consultas que me permiten obtener la informacion de la Subasta
     Page<Subasta> findAllBy (Pageable paginador);
+
     List<Subasta> findAllByCodigo(Integer codigo);
 
 }

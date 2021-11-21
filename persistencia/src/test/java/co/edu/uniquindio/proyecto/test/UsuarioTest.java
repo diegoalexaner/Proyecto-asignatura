@@ -77,6 +77,10 @@ public class UsuarioTest {
         Assertions.assertEquals(3, lista.size());
     }
 
+
+    /*
+    NO HACE PARTE DEL CRUD
+
     @Test
     @Sql("classpath:data.sql")
     public void filtrarNombreTest(){
@@ -114,37 +118,6 @@ public class UsuarioTest {
         System.out.println(lista);
 
     }
-
-    @Test
-    @Sql("classpath:data.sql")
-    public void obtenerFavoritosUsuarioTest(){
-        List<Producto> favoritos = usuarioRepo.obtenerProductosFavoritos( "pepe@gmail.com");
-        Assertions.assertEquals(2,favoritos.size());
-    }
-
-    @Test
-    @Sql("classpath:data.sql")
-    public void listarUsuariosCiudadTest(){
-        List<Usuario> usuarios = ciudadRepo.listarUsuarios("armenia");
-        usuarios.forEach(System.out::println);
-        Assertions.assertEquals(3,usuarios.size());
-    }
-
-
-    @Test
-    @Sql("classpath:data.sql")
-    public void listarUsuariosProductoTest(){
-        List<Object[]> respuesta = usuarioRepo.listarUsuariosYProductos();
-
-        for (Object[] objeto: respuesta){
-            System.out.println(objeto[0]+ "-----"   + objeto[1] + "-------"+ objeto[2]);
-        }
-
-    }
-
-
-
-
-
+    */
 
 }

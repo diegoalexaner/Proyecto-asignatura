@@ -24,6 +24,7 @@ public class MensajeTest {
     @Autowired
     private ChatRepo chatRepo;
 
+    //Funcion que permite realizar la prueba unitaria para registrar un mensaje y se comprueba que no sea null
     @Test
     @Sql("classpath:data.sql")
     public void registrarMensajeTest(){
@@ -35,6 +36,7 @@ public class MensajeTest {
         Assertions.assertNotNull(mensajeGuardado);
     }
 
+    //Funcion que permite realizar la prueba unitaria para eliminar un mensaje y comprobar que se elimino mediante el assertNull
     @Test
     @Sql("classpath:data.sql")
     public void eliminarMensajeTest(){
@@ -46,6 +48,8 @@ public class MensajeTest {
         Assertions.assertNull(mensajeEliminado);
 
     }
+
+    //Funcion que permite realizar la prueba unitaria para actualizar un mensaje
     @Test
     @Sql("classpath:data.sql")
     public void ActualizarMensajeTest(){
@@ -59,6 +63,7 @@ public class MensajeTest {
 
     }
 
+    //Funcion que permite realizar la prueba unitaria para listar los mensajes y validar mediante el tamaño de la lista
     @Test
     @Sql("classpath:data.sql")
     public void listarMensajeTest(){

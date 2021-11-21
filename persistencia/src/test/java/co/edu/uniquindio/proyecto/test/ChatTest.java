@@ -26,6 +26,8 @@ public class ChatTest {
 
     @Autowired
     private UsuarioRepo usuarioRepo;
+
+    //Funcion que permite realizar la prueba unitaria para registrar un chat
     @Test
     @Sql("classpath:data.sql")
     public void registrarChatTest(){
@@ -39,6 +41,7 @@ public class ChatTest {
         Assertions.assertNotNull(chatGuardado);
     }
 
+    //Funcion que permite realizar la prueba unitaria para eliminar una chat y comprobar que se elimino mediante el assertNull
 
     @Test
     @Sql("classpath:data.sql")
@@ -51,9 +54,10 @@ public class ChatTest {
         Assertions.assertNull(chatEliminado);
     }
 
+    //Funcion que permite realizar la prueba unitaria para actualizar un chat
     @Test
     @Sql("classpath:data.sql")
-    public void ActualizarDetalleCompraTest(){
+    public void ActualizarChatTest(){
 
         Chat chat =chatRepo.findById(1).orElse(null);
         Usuario usuario = usuarioRepo.findById("Maria").orElse(null);
@@ -65,9 +69,10 @@ public class ChatTest {
         Assertions.assertEquals(usuario, chat.getUsuario());
     }
 
+    //Funcion que permite realizar la prueba unitaria para listar los chat y validar mediante el tamaño de la lista
     @Test
     @Sql("classpath:data.sql")
-    public void listarDetalleCompraTest(){
+    public void listarChatTest(){
         List<Chat> lista = chatRepo.findAll();
         Assertions.assertEquals(3, lista.size());
     }

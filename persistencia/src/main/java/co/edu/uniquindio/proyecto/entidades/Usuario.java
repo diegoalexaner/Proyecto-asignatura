@@ -1,17 +1,20 @@
 package co.edu.uniquindio.proyecto.entidades;
 
-import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import lombok.*;
-import org.junit.Test;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
 @ToString(callSuper = true)
 public class Usuario extends Persona implements Serializable {
+    //Declaracion  de atributos  de la clase con su respectiva  parametrizacion
 
     @ElementCollection
     private List<String> telefonos;
@@ -20,7 +23,7 @@ public class Usuario extends Persona implements Serializable {
     private String username;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+   // @JoinColumn(nullable = false)
     private Ciudad ciudad;
 
     @OneToMany(mappedBy = "vendedor")
@@ -53,9 +56,4 @@ public class Usuario extends Persona implements Serializable {
         this.username = username;
         this.ciudad = ciudad;
     }
-
-
-
-
-
 }
