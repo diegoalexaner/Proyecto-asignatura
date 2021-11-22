@@ -7,13 +7,33 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ProductoRepo extends JpaRepository<Producto, Integer> {
 
+
+
+
     Page<Producto> findAll(Pageable paginador);
 
-    //Consulta que obtiene el nombre del vendedor dado el codigo de un Producto
+    @Query("select p from Producto p where p.nombre like concat('%', :nombre, '%') ")
+    List<Producto> buscarProductoNombre(String nombre);
+
+    @Query("select p from Producto p where p.comentarios is empty")
+    List<Producto> obtenerProductosSinComentarios();
+
+
+
+
+   /*
     @Query("select p.vendedor.nombre from Producto p where p.codigo= :id")
     String obtenerNombreVendedor(Integer id);
+
+    @Query("select p from Producto p where p.comentarios is empty");
+    List<Producto> obtenerProductosSinComentarios();
+*/
+
+
 
 }

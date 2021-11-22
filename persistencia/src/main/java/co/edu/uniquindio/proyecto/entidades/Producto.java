@@ -67,7 +67,7 @@ public class Producto implements Serializable {
     private Usuario vendedor;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    //@JoinColumn(nullable = false)
     private Ciudad ciudad;
 
     @OneToMany(mappedBy = "producto")

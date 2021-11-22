@@ -4,7 +4,6 @@ import co.edu.uniquindio.proyecto.entidades.Producto;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 import java.util.List;
 
-
 public interface UsuarioServicio {
 
     Usuario registrarUsuario(Usuario u) throws Exception;

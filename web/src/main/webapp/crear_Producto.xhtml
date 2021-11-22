@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Crear Producto</title>
+</h:head>
+<h:body>
+    <p:panel header="Registrar Prducto">
+        <h:form>
+         <h:panelGrid columns="2" cellpadding="5">
+
+             <p:outputLabel  value="nombre:" for="nombre_p " />
+             <p:inputText id="nombre_p" value="#{productoBean.producto.nombre}" required="true"/>
+
+             <p:outputLabel  value="Nombre de la publicacion:" for="nombre_public_p " />
+             <p:inputText id="nombre_public_p" value="#{productoBean.producto.nombrePublicacion}" required="true"/>
+
+             <p:outputLabel  value="Precio:" for="precio_p " />
+             <p:inputText id="precio_p" value="#{productoBean.producto.precio}" type="number" required="true"/>
+
+             <p:outputLabel  value="Unidades:" for="unidades_p" />
+             <p:inputText id="unidades_p" value="#{productoBean.producto.unidades}" type="number" required="true" />
+
+             <p:outputLabel  value="Descuento:" for="descuento_p" />
+             <p:inputText id="descuento_p" value="#{productoBean.producto.descuento}"  required="true"/>
+
+             <p:outputLabel  value="Fecha Limite:" for="fecha_limite_p" />
+             <p:datePicker id="fecha_limite_p" value="#{productoBean.producto.fecha_limite}" required="true "/>
+
+             <p:outputLabel  value="Descripcion:" for="descripcion_p" />
+             <p:textEditor id="descripcion_p" value="#{productoBean.producto.descripcion}" height="300" secure="false" />
+
+
+
+
+
+        </h:panelGrid>
+
+         <p:growl showDetail="true" />
+         <p:commandButton action="#{productoBean.crerProducto}" value="Registrar Producto" icon="pi pi-user-plus"  update="@form" />
+     </h:form>
+    </p:panel>
+</h:body>
+</html>

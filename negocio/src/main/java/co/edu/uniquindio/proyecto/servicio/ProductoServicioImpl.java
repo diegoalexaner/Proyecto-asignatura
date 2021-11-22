@@ -76,8 +76,8 @@ public class ProductoServicioImpl implements ProductoServicio {
     }
 
     @Override
-    public List<Producto> buscarProducto(String nombre, String[] filtros) {
-        return null;
+    public List<Producto> buscarProducto(String nombreProducto, String[] filtros) {
+        return productoRepo.buscarProductoNombre(nombreProducto);
     }
 
     @Override

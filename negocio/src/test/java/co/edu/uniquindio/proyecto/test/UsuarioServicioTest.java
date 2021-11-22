@@ -1,7 +1,6 @@
 package co.edu.uniquindio.proyecto.test;
 
 import co.edu.uniquindio.proyecto.NegocioApplication;
-import co.edu.uniquindio.proyecto.entidades.Ciudad;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 import co.edu.uniquindio.proyecto.servicio.UsuarioServicio;
 import org.junit.jupiter.api.Assertions;
@@ -13,8 +12,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @SpringBootTest(classes = NegocioApplication.class)
-@Transactional
-public class UsuarioServicioTest {
+public class  UsuarioServicioTest {
 
     @Autowired
     private UsuarioServicio usuarioServicio;
