@@ -1,4 +1,5 @@
 package co.edu.uniquindio.proyecto.bean;
+
 import co.edu.uniquindio.proyecto.entidades.Categoria;
 import co.edu.uniquindio.proyecto.entidades.Producto;
 import co.edu.uniquindio.proyecto.servicio.ProductoServicio;
@@ -14,22 +15,21 @@ import java.util.List;
 
 @Component
 @ViewScoped
-public class InicioBean implements Serializable {
-
-
-    @Autowired
-    private ProductoServicio productoServicio;
+public class InicioBeam implements Serializable {
 
     @Getter @Setter
     private List<Producto> productos;
 
+    @Autowired
+    private ProductoServicio productoServicio;
+
     @PostConstruct
     public void inicializar(){
-
-        this.productos = productoServicio.listarTodosProductos();
+        this.productos=productoServicio.listarTodosProductos();
     }
 
     public String irADetalle(String id){
-        return "detalleProducto?faces-redirect=true&amp;producto="+id;
+        return "detalle_producto?faces-redirect=true&amp;producto="+id;
     }
 }
+

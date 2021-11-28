@@ -12,12 +12,11 @@ import java.io.Serializable;
 @Setter
 public class EjemploBean implements Serializable {
 
-    private String atributo1;
-    private String atributo2;
+    private String atributo1, atributo2;
 
     public void cambiar(){
         String aux = atributo1;
-        atributo1 = atributo2;
+        atributo1  = atributo2;
         atributo2 = aux;
     }
 

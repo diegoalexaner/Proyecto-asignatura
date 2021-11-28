@@ -13,7 +13,7 @@
     <title>Crear Producto</title>
 </h:head>
 <h:body>
-    <p:panel header="Registrar Prducto">
+    <p:panel header="Crear Nuevo Producto">
         <h:form>
          <h:panelGrid columns="2" cellpadding="5">
 
@@ -32,8 +32,10 @@
              <p:outputLabel  value="Descuento:" for="descuento_p" />
              <p:inputText id="descuento_p" value="#{productoBean.producto.descuento}"  required="true"/>
 
-             <p:outputLabel  value="Fecha Limite:" for="fecha_limite_p" />
-             <p:datePicker id="fecha_limite_p" value="#{productoBean.producto.fecha_limite}" required="true "/>
+             <p:outputLabel  value="Categoria:" for="categoria_p" />
+             <p:selectManyMenu id="categoria_p" value="#{productoBean.producto.categorias}" showCheckbox="true" required="true">
+                <f:selectItems value="#{productoBean.categorias}" var="categoria" />
+             </p:selectManyMenu>
 
              <p:outputLabel value="Imagenes:" for="imagen_p" />
              <p:fileUpload id="imagen_p" listener="#{productoBean.subirImagenes}" mode="advanced" multiple="true" sizeLimit="10000000" fileLimit="5" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" required="true" />
@@ -43,7 +45,10 @@
              <p:textEditor id="descripcion_p" value="#{productoBean.producto.descripcion}" height="300" secure="false" />
 
 
-
+             <!--
+                         <p:outputLabel  value="Fecha Limite:" for="fecha_limite_p" />
+                         <p:datePicker id="fecha_limite_p" value="#{productoBean.producto.fecha_limite}" required="true "/>
+                            -->
 
 
         </h:panelGrid>

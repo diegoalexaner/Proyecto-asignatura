@@ -29,7 +29,7 @@
             <p:inputText id="username_u" value="#{usuarioBean.usuario.username}" required="true"/>
 
             <p:outputLabel  value="Ciudad:" for="ciudad_usuario " />
-            <p:selectOneMenu id="ciudad_usuario" value="#{usuarioBean.usuario.ciudad}"
+            <p:selectOneMenu id="ciudad_usuario" value="#{usuarioBean.usuario.ciudad}" converter="#{ciudadConverter }"
                              required="true" requiredMessage="La ciudad es obligatoria" >
                 <f:selectItems var="ciudad" itemLabel="#{ciudad.nombreCiudad}"
                                value="#{usuarioBean.ciudades}" />
